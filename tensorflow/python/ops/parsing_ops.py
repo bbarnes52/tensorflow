@@ -557,7 +557,7 @@ def parse_example(serialized, features, name=None, example_names=None):
     serialized: A vector (1-D Tensor) of strings, a batch of binary
       serialized `Example` protos.
     features: A `dict` mapping feature keys to `FixedLenFeature`,
-      `VarLenFeature`, and `SparseFeature` values.
+      `VarLenFeature`, `SparseFeature`, and `FixedLenSequenceFeature` values.
     name: A name for this operation (optional).
     example_names: A vector (1-D Tensor) of strings (optional), the names of
       the serialized protos in the batch.
@@ -735,8 +735,8 @@ def parse_single_example(serialized, features, name=None, example_names=None):
   Args:
     serialized: A scalar string Tensor, a single serialized Example.
       See `_parse_single_example_raw` documentation for more details.
-    features: A `dict` mapping feature keys to `FixedLenFeature` or
-      `VarLenFeature` values.
+    features: A `dict` mapping feature keys to `FixedLenFeature`,
+      `VarLenFeature`, `SparseFeature`, and `FixedLenSequenceFeature` values.
     name: A name for this operation (optional).
     example_names: (Optional) A scalar string Tensor, the associated name.
       See `_parse_single_example_raw` documentation for more details.
